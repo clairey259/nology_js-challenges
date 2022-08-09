@@ -99,7 +99,7 @@ const isItUppercase = firstLetter === firstLetter.toUpperCase();
 
 export const getIsValidOnNameTag = () => {
 
-  if (nameTagOption.length == 8 && isItUppercase) {
+  if (nameTagOption.length <= 8 && isItUppercase) {
     return true;
   } else {
     return false;
@@ -119,7 +119,7 @@ const stringToConvert = "14.45";
 export const convertStringToNumber = () => {
   return parseInt(convertStringToNumber);
 };
-reg;
+//reg;
 
 /**
  * A function that uses regex to programmatically test if a string contains uppercase letters.
