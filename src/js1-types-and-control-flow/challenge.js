@@ -133,9 +133,9 @@ const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 export const getHasUppercaseLetters = () => {
   const hasUppercase = /[A-Z]+/g;
   if (hasUppercase.test(stringWithUppercaseLetters) == true) {
-    return (true);
+    return true;
   } else {
-    return (false);
+    return false;
   }
 };
 
@@ -150,5 +150,10 @@ export const getHasUppercaseLetters = () => {
 const pascalCaseVariableName = "IWantToBeSnakeCase";
 
 export const convertPascalCaseToSnakeCase = () => {
-  // Write your code here
+  let findCapitalletters = pascalCaseVariableName.match(/[A-Z]/g);
+  var result = pascalCaseVariableName;
+  for (let i = 1; i < findCapitalletters.length; i++) {
+    result = result.replace(findCapitalletters[i], "_" + findCapitalletters[i]);
+  }
+  return result.toLowerCase();
 };
