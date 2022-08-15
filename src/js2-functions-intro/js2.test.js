@@ -12,7 +12,7 @@ const {
   getStudentSummary
 } = challenge;
 
-describe("createFullName() tests", () => {
+xdescribe("createFullName() tests", () => {
   it("Should have a return", () => {
     expect(createFullName("John", "Smith")).toBeDefined();
   });
@@ -41,7 +41,7 @@ xdescribe("findSmallestNumber() tests", () => {
   });
 });
 
-xdescribe("multiplyNumbers() tests", () => {
+describe("multiplyNumbers() tests", () => {
   it("Should have a return", () => {
     expect(multiplyNumbers(2, 6)).toBeDefined();
   });
