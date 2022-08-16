@@ -155,5 +155,19 @@ export const calculateAreaOfCircle = (radius) => {
  * @param {string} name John
  */
 export const getStudentSummary = (score, name) => {
-  /* Write your code here */
+  const grade = getGrade(score);
+  if ((grade === "A")) {
+    return `Congratulations ${name}! You achieved a grade of A.`;
+  } else if ((grade === "B")) {
+    return `Well done ${name}! You achieved a grade of B.`;
+  } else if ((grade === "C")) {
+    return `Nicely done ${name}! You achieved a grade of C.`;
+  } else if ((grade === "D")) {
+    return `That's okay ${name}. You achieved a grade of D.`;
+  } else if ((grade === "E")) {
+    return `Too bad ${name}. You achieved a grade of E.`;
+  } else if ((grade === "F")) {
+    return `Sorry ${name}. You achieved a grade of F. There's always next year.`;
+  } else
+    return `My apologies ${name}, there's been an error in processing your grade.`;
 };

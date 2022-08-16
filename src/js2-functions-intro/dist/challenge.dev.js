@@ -186,7 +186,21 @@ var calculateAreaOfCircle = function calculateAreaOfCircle(radius) {
 exports.calculateAreaOfCircle = calculateAreaOfCircle;
 
 var getStudentSummary = function getStudentSummary(score, name) {
-  /* Write your code here */
+  var grade = getGrade(score);
+
+  if (grade === "A") {
+    return "Congratulations ".concat(name, "! You achieved a grade of A.");
+  } else if (grade === "B") {
+    return "Well done ".concat(name, "! You achieved a grade of B.");
+  } else if (grade === "C") {
+    return "Nicely done ".concat(name, "! You achieved a grade of C.");
+  } else if (grade === "D") {
+    return "That's okay ".concat(name, ". You achieved a grade of D.");
+  } else if (grade === "E") {
+    return "Too bad ".concat(name, ". You achieved a grade of E.");
+  } else if (grade === "F") {
+    return "Sorry ".concat(name, ". You achieved a grade of F. There's always next year.");
+  } else return "My apologies ".concat(name, ", there's been an error in processing your grade.");
 };
 
 exports.getStudentSummary = getStudentSummary;
