@@ -40,7 +40,7 @@ xdescribe("findSmallestNumber() tests", function () {
     expect(findSmallestNumber(200, 100)).toBe(100);
   });
 });
-describe("multiplyNumbers() tests", function () {
+xdescribe("multiplyNumbers() tests", function () {
   it("Should have a return", function () {
     expect(multiplyNumbers(2, 6)).toBeDefined();
   });
@@ -138,7 +138,7 @@ xdescribe("calculateAreaOfCircle() tests", function () {
     expect(calculateAreaOfCircle(1)).toBe(3.14);
   });
 });
-xdescribe("getStudentSummary() tests", function () {
+describe("getStudentSummary() tests", function () {
   it("Should have a return", function () {
     expect(getStudentSummary(70, "John")).toBeDefined();
   });

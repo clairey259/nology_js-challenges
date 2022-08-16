@@ -55,10 +55,8 @@ var findSmallestNumber = function findSmallestNumber(number1, number2) {
 
 exports.findSmallestNumber = findSmallestNumber;
 
-var multiplyNumbers = function multiplyNumbers()
-/* Write the parameters here */
-{
-  /* Write your code here */
+var multiplyNumbers = function multiplyNumbers(number1, number2) {
+  return number1 * number2;
 };
 /* Intermediate Challenges */
 
@@ -77,7 +75,11 @@ var multiplyNumbers = function multiplyNumbers()
 exports.multiplyNumbers = multiplyNumbers;
 
 var checkIfNewHighScore = function checkIfNewHighScore(score, highScore) {
-  /* Write your code here */
+  if (score > highScore) {
+    return "You got a new high score!";
+  } else if (score == highScore) {
+    return "So close!";
+  } else return "Better luck next time!";
 };
 /**
  * A function that converts a temperature a in celsius to fahrenheit and outputs it in a string format -> "15 degrees celsius is 59 degrees fahrenheit".
@@ -90,7 +92,8 @@ var checkIfNewHighScore = function checkIfNewHighScore(score, highScore) {
 exports.checkIfNewHighScore = checkIfNewHighScore;
 
 var celsiusToFahrenheit = function celsiusToFahrenheit(tempInCelsius) {
-  /* Write your code here */
+  var tempInFahrenheit = tempInCelsius * 1.8 + 32;
+  return "".concat(tempInCelsius, " degrees celsius is ").concat(tempInFahrenheit, " degrees fahrenheit");
 };
 /**
  * A function that calculates the number of snickers needed for the rest of your life based on the number you eat per day,
@@ -106,7 +109,7 @@ var celsiusToFahrenheit = function celsiusToFahrenheit(tempInCelsius) {
 exports.celsiusToFahrenheit = celsiusToFahrenheit;
 
 var calculateLifetimeSupply = function calculateLifetimeSupply(snickersPerDay, age, maxAge) {
-  /* Write your code here */
+  return snickersPerDay * 365 * (maxAge - age);
 };
 /* Advanced Challenges */
 
@@ -129,7 +132,23 @@ var calculateLifetimeSupply = function calculateLifetimeSupply(snickersPerDay, a
 exports.calculateLifetimeSupply = calculateLifetimeSupply;
 
 var getGrade = function getGrade(score) {
-  /* Write your code here */
+  if (typeof score !== "number") {
+    return "Score unavailable";
+  } else if (score > 100) {
+    return "Score unavailable";
+  } else if (score >= 80) {
+    return "A";
+  } else if (score >= 70) {
+    return "B";
+  } else if (score >= 60) {
+    return "C";
+  } else if (score >= 50) {
+    return "D";
+  } else if (score >= 40) {
+    return "E";
+  } else if (score >= 0) {
+    return "F";
+  } else return "Score unavailable";
 };
 /**
  * A function that find the area of a circle to 2 decimal places.
@@ -142,7 +161,8 @@ var getGrade = function getGrade(score) {
 exports.getGrade = getGrade;
 
 var calculateAreaOfCircle = function calculateAreaOfCircle(radius) {
-  /* Write your code here */
+  var AreaOfCircle = Math.PI * Math.pow(radius, 2);
+  return parseFloat(AreaOfCircle.toFixed(2));
 };
 /* Expert Challenge */
 

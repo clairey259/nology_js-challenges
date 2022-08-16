@@ -41,7 +41,7 @@ xdescribe("findSmallestNumber() tests", () => {
   });
 });
 
-describe("multiplyNumbers() tests", () => {
+xdescribe("multiplyNumbers() tests", () => {
   it("Should have a return", () => {
     expect(multiplyNumbers(2, 6)).toBeDefined();
   });
@@ -164,7 +164,7 @@ xdescribe("calculateAreaOfCircle() tests", () => {
   });
 });
 
-xdescribe("getStudentSummary() tests", () => {
+describe("getStudentSummary() tests", () => {
   it("Should have a return", () => {
     expect(getStudentSummary(70, "John")).toBeDefined();
   });
