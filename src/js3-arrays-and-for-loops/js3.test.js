@@ -23,7 +23,7 @@ const ingredients = ["Bacon", "Lettuce", "Tomato"];
 const ingredientsString = "Bacon+Lettuce+Tomato";
 const itemString = "Apple+Orange+Pear";
 
-describe("Testing createRecipeString()", () => {
+xdescribe("Testing createRecipeString()", () => {
   it("Should be defined", () => {
     expect(createRecipeString(ingredients)).toBeDefined();
   });
@@ -117,7 +117,7 @@ xdescribe("Testing moveFirstAndLastItems()", () => {
   });
 });
 
-xdescribe("Testing removeEvenNumbers()", () => {
+describe("Testing removeEvenNumbers()", () => {
   it("Should be defined", () => {
     expect(removeEvenNumbers(scores)).toBeDefined();
   });

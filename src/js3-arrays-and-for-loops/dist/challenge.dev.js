@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.encryptString = exports.generateHighscores = exports.reverseOrder = exports.generateAverage = exports.removeEvenNumbers = exports.moveFirstAndLastItems = exports.totalRange = exports.totalScores = exports.getFirstAndLastItems = exports.createRecipeString = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 /* JS3 builds on the previous challenges and adds the use of Arrays, For Loops, Conditionals (If, else, switch)
  *  & calling your own functions.
  */
@@ -20,21 +35,16 @@
  * @param {string[]} ingredientsArr ["Bacon","Lettuce","Tomato"]
  * @return {string} "Bacon+Lettuce+Tomato"
  */
-
-export const createRecipeString = (ingredientsArr) => {
+var createRecipeString = function createRecipeString(ingredientsArr) {
   // let recipeString = "";
-
   // for (let i = 0; i < ingredientsArr.length; i++) {
   //   if (i === ingredientsArr.length - 1) {
   //     recipeString += ingredientsArr[i];
   //   } else recipeString += ingredientsArr[i] + "+";
   // }
-
   // return recipeString;
-
   return ingredientsArr.join("+");
 };
-
 /**
  * A function that takes Array of Items and returns a NEW ARRAY with the first and last item in it.
  *
@@ -42,12 +52,13 @@ export const createRecipeString = (ingredientsArr) => {
  * @return {string[]} ["Tony","Dave"]
  */
 
-export const getFirstAndLastItems = (itemsArr) => {
-  let firstAndLastItems = [itemsArr[0], itemsArr[itemsArr.length - 1]];
 
+exports.createRecipeString = createRecipeString;
+
+var getFirstAndLastItems = function getFirstAndLastItems(itemsArr) {
+  var firstAndLastItems = [itemsArr[0], itemsArr[itemsArr.length - 1]];
   return firstAndLastItems;
 };
-
 /**
  * A function that takes an array of scores and totals the scores by looping through the array.
  *
@@ -55,14 +66,18 @@ export const getFirstAndLastItems = (itemsArr) => {
  * @return {number} 6
  */
 
-export const totalScores = (scoreArr) => {
-  let total = 0;
-  for (let i = 0; i < scoreArr.length; i++) {
+
+exports.getFirstAndLastItems = getFirstAndLastItems;
+
+var totalScores = function totalScores(scoreArr) {
+  var total = 0;
+
+  for (var i = 0; i < scoreArr.length; i++) {
     total = total + scoreArr[i];
   }
+
   return total;
 };
-
 /**
  * Intermediate Challenges
  */
@@ -75,14 +90,18 @@ export const totalScores = (scoreArr) => {
  * @return {number} 55
  */
 
-export const totalRange = (rangeMax) => {
-  let total = 0;
-  for (let i = 0; i < rangeMax + 1; i++) {
+
+exports.totalScores = totalScores;
+
+var totalRange = function totalRange(rangeMax) {
+  var total = 0;
+
+  for (var i = 0; i < rangeMax + 1; i++) {
     total = total + i;
   }
+
   return total;
 };
-
 /**
  * A function that takes an array and returns a NEW ARRAY where the last item has been moved to the front of the array and removed from the back.
  *
@@ -90,13 +109,17 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 //had to look at answer
-export const moveFirstAndLastItems = (itemsArr) => {
-  const newArr = [...itemsArr];
-  const lastElement = newArr.pop();
+
+
+exports.totalRange = totalRange;
+
+var moveFirstAndLastItems = function moveFirstAndLastItems(itemsArr) {
+  var newArr = _toConsumableArray(itemsArr);
+
+  var lastElement = newArr.pop();
   newArr.unshift(lastElement);
   return newArr;
 };
-
 /**
  * Read this article on how to clone an array.
  * https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array/
@@ -111,17 +134,20 @@ export const moveFirstAndLastItems = (itemsArr) => {
  * @return {number[]} [1,1,1,1]
  */
 
-export const removeEvenNumbers = (numberArr) => {
 
-  const cloneNumberArr = [...numberArr];
-  for (let i = 0; i <= cloneNumberArr.length; i++){
-    if (cloneNumberArr[i] %2){
+exports.moveFirstAndLastItems = moveFirstAndLastItems;
+
+var removeEvenNumbers = function removeEvenNumbers(numberArr) {
+  var cloneNumberArr = _toConsumableArray(numberArr);
+
+  for (var i = 0; i <= cloneNumberArr.length; i++) {
+    if (cloneNumberArr[i] % 2) {
       cloneNumberArr.splice(i, 1);
-    } 
+    }
   }
+
   return;
 };
-
 /**
  * Advanced Challenges
  */
@@ -134,10 +160,12 @@ export const removeEvenNumbers = (numberArr) => {
  * @return {number} 2
  */
 
-export const generateAverage = (numberArr) => {
+
+exports.removeEvenNumbers = removeEvenNumbers;
+
+var generateAverage = function generateAverage(numberArr) {
   return;
 };
-
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
  *
@@ -145,10 +173,12 @@ export const generateAverage = (numberArr) => {
  * @return {number} [3,2,1]
  */
 
-export const reverseOrder = (toReverseArr) => {
+
+exports.generateAverage = generateAverage;
+
+var reverseOrder = function reverseOrder(toReverseArr) {
   return;
 };
-
 /**
  * Expert Challenges
  */
@@ -167,10 +197,12 @@ export const reverseOrder = (toReverseArr) => {
  * @return {string[]} ["P:1 Tony scored 45","P:2 John scored 55","P:3 Dave scored 66"]
  */
 
-export const generateHighscores = (playersArr, scoresArr) => {
+
+exports.reverseOrder = reverseOrder;
+
+var generateHighscores = function generateHighscores(playersArr, scoresArr) {
   return;
 };
-
 /**
  * A function that takes a string and creates a simple encrypted message.
  *
@@ -192,11 +224,15 @@ export const generateHighscores = (playersArr, scoresArr) => {
  * @param {string} toEncrypt "encrypted"
  * @return {string} "ertnyecpd"
  */
-
 // export const encryptString = (toEncrypt) => {
 //   return;
 // };
 
-export const encryptString = (toEncrypt) => {
+
+exports.generateHighscores = generateHighscores;
+
+var encryptString = function encryptString(toEncrypt) {
   return;
 };
+
+exports.encryptString = encryptString;
