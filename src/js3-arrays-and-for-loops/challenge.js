@@ -90,6 +90,7 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 //had to look at answer
+// ...
 export const moveFirstAndLastItems = (itemsArr) => {
   const newArr = [...itemsArr];
   const lastElement = newArr.pop();
@@ -112,14 +113,13 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-
-  const cloneNumberArr = [...numberArr];
-  for (let i = 0; i <= cloneNumberArr.length; i++){
-    if (cloneNumberArr[i] %2){
-      cloneNumberArr.splice(i, 1);
-    } 
+  let newArr = [];
+  for (let i = 0; i <= numberArr.length; i++) {
+    if (numberArr[i] % 2 === 1) {
+      newArr.push(numberArr[i]);
+    }
   }
-  return;
+  return newArr;
 };
 
 /**
@@ -135,7 +135,16 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  const lengthOfArr = numberArr.length;
+  if (lengthOfArr === 0) {
+    return 0;
+  }
+  let sumOfArr = 0;
+  numberArr.forEach((element) => {
+    sumOfArr += element;
+  });
+
+  return Math.round(sumOfArr / lengthOfArr, 1);
 };
 
 /**
@@ -146,7 +155,14 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  const newArr = [];
+  const toReverseArrClone = [...toReverseArr];
+  for (let i = toReverseArrClone.length - 1; i >= 0; i--) {
+    let lastElement = toReverseArrClone[i];
+    newArr.push(lastElement);
+  }
+
+  return newArr;
 };
 
 /**

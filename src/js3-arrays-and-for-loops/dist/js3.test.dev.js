@@ -104,7 +104,7 @@ xdescribe("Testing moveFirstAndLastItems()", function () {
     expect(moveFirstAndLastItems(ingredients)).toEqual(["Tomato", "Bacon", "Lettuce"]);
   });
 });
-describe("Testing removeEvenNumbers()", function () {
+xdescribe("Testing removeEvenNumbers()", function () {
   it("Should be defined", function () {
     expect(removeEvenNumbers(scores)).toBeDefined();
   });
@@ -150,7 +150,7 @@ xdescribe("Testing generateAverage()", function () {
     expect(generateAverage([])).toBe(0);
   });
 });
-xdescribe("Testing reverseOrder()", function () {
+describe("Testing reverseOrder()", function () {
   it("Should be defined", function () {
     expect(reverseOrder(items)).toBeDefined();
   });

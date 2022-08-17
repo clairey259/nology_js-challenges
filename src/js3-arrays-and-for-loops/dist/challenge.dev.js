@@ -109,6 +109,7 @@ var totalRange = function totalRange(rangeMax) {
  * @return {string[]} ["Dave","Tony","John"]
  */
 //had to look at answer
+// ...
 
 
 exports.totalRange = totalRange;
@@ -138,15 +139,15 @@ var moveFirstAndLastItems = function moveFirstAndLastItems(itemsArr) {
 exports.moveFirstAndLastItems = moveFirstAndLastItems;
 
 var removeEvenNumbers = function removeEvenNumbers(numberArr) {
-  var cloneNumberArr = _toConsumableArray(numberArr);
+  var newArr = [];
 
-  for (var i = 0; i <= cloneNumberArr.length; i++) {
-    if (cloneNumberArr[i] % 2) {
-      cloneNumberArr.splice(i, 1);
+  for (var i = 0; i <= numberArr.length; i++) {
+    if (numberArr[i] % 2 === 1) {
+      newArr.push(numberArr[i]);
     }
   }
 
-  return;
+  return newArr;
 };
 /**
  * Advanced Challenges
@@ -164,7 +165,17 @@ var removeEvenNumbers = function removeEvenNumbers(numberArr) {
 exports.removeEvenNumbers = removeEvenNumbers;
 
 var generateAverage = function generateAverage(numberArr) {
-  return;
+  var lengthOfArr = numberArr.length;
+
+  if (lengthOfArr === 0) {
+    return 0;
+  }
+
+  var sumOfArr = 0;
+  numberArr.forEach(function (element) {
+    sumOfArr += element;
+  });
+  return Math.round(sumOfArr / lengthOfArr, 1);
 };
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
@@ -177,7 +188,16 @@ var generateAverage = function generateAverage(numberArr) {
 exports.generateAverage = generateAverage;
 
 var reverseOrder = function reverseOrder(toReverseArr) {
-  return;
+  var newArr = [];
+
+  var toReverseArrClone = _toConsumableArray(toReverseArr);
+
+  for (var i = toReverseArrClone.length - 1; i >= 0; i--) {
+    var lastElement = toReverseArrClone[i];
+    newArr.push(lastElement);
+  }
+
+  return newArr;
 };
 /**
  * Expert Challenges
