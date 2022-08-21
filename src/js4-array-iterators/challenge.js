@@ -10,7 +10,7 @@
 */
 
 // MAP -> New array -> Function applied to each item in the array
-// FILTER -> new array -> each item has to pass a condition 
+// FILTER -> new array -> each item has to pass a condition
 // FOREACH -> read only -> gives you access to each item in the array
 
 /**
@@ -26,12 +26,12 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  const newArr = []
-   for (let i = 0; i < booleanArr.length; i++){
-    if (booleanArr[i] === true){
-      newArr.push (booleanArr[i])
+  const newArr = [];
+  for (let i = 0; i < booleanArr.length; i++) {
+    if (booleanArr[i] === true) {
+      newArr.push(booleanArr[i]);
     }
-   }
+  }
   return newArr;
 };
 
@@ -44,7 +44,15 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  const newArr = [];
+  let i = 0;
+  while (numbersArr.length !== newArr.length) {
+    const percentage = numbersArr[i] * 100
+    const newInput = `${percentage}%`
+    newArr.push(newInput);
+    i += 1;
+  }
+  return newArr;
 };
 
 /**

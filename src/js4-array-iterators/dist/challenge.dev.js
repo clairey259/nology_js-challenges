@@ -16,7 +16,7 @@ exports.fizzBuzz = exports.formatString = exports.formatStringArray = exports.fi
   share it with the group!
 */
 // MAP -> New array -> Function applied to each item in the array
-// FILTER -> new array -> each item has to pass a condition 
+// FILTER -> new array -> each item has to pass a condition
 // FOREACH -> read only -> gives you access to each item in the array
 
 /**
@@ -53,7 +53,17 @@ var removeFalseValues = function removeFalseValues(booleanArr) {
 exports.removeFalseValues = removeFalseValues;
 
 var createPercentageList = function createPercentageList(numbersArr) {
-  return;
+  var newArr = [];
+  var i = 0;
+
+  while (numbersArr.length !== newArr.length) {
+    var percentage = numbersArr[i] * 100;
+    var newInput = "".concat(percentage, "%");
+    newArr.push(newInput);
+    i += 1;
+  }
+
+  return newArr;
 };
 /**
  * A function that takes an array of possessions and a name.

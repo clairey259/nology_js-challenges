@@ -173,7 +173,7 @@ describe("Testing reverseOrder()", function () {
     expect(reverseOrder(ingredients)).not.toBe(ingredients);
   });
 });
-xdescribe("Testing generateHighscores()", function () {
+describe("Testing generateHighscores()", function () {
   var players, playerScores, highscores;
   beforeEach(function () {
     players = ["Andy", "Bex", "Calum"];
@@ -211,7 +211,7 @@ xdescribe("Testing generateHighscores()", function () {
     expect(generateHighscores(players, playerScores)).not.toBe(playerScores);
   });
 });
-xdescribe("Testing encryptString()", function () {
+describe("Testing encryptString()", function () {
   it("Should NOT return undefined", function () {
     expect(encryptString("  defined")).toBeDefined();
   });

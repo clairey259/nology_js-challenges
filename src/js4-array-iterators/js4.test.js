@@ -49,7 +49,7 @@ describe("Testing removeFalseValues()", () => {
   });
 });
 
-xdescribe("Testing createPercentageList()", () => {
+describe("Testing createPercentageList()", () => {
   it("Should return an array", () => {
     expect(Array.isArray(createPercentageList(toBePercentages))).toBe(true);
   });

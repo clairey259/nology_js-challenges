@@ -221,7 +221,24 @@ var reverseOrder = function reverseOrder(toReverseArr) {
 exports.reverseOrder = reverseOrder;
 
 var generateHighscores = function generateHighscores(playersArr, scoresArr) {
-  return;
+  var newArry = [];
+
+  var playersArrClone = _toConsumableArray(playersArr);
+
+  var scoresArrClone = _toConsumableArray(scoresArr);
+
+  if (playersArr.length !== scoresArr.length || scoresArr.length == 0) {
+    return "invalid inputs";
+  }
+
+  for (var i = 0; newArry.length !== playersArrClone.length; i++) {
+    var player = playersArr[i];
+    var score = scoresArr[i];
+    var message = "P:".concat(i + 1, " ").concat(player, " scored ").concat(score);
+    newArry.push(message);
+  }
+
+  return newArry;
 };
 /**
  * A function that takes a string and creates a simple encrypted message.
@@ -252,7 +269,22 @@ var generateHighscores = function generateHighscores(playersArr, scoresArr) {
 exports.generateHighscores = generateHighscores;
 
 var encryptString = function encryptString(toEncrypt) {
-  return;
+  var Arr1 = [];
+  var Arr2 = [];
+  var Arr3 = [];
+  var i = 0;
+
+  while (i < toEncrypt.length) {
+    Arr1.push(toEncrypt[i]);
+    i++;
+    Arr2.push(toEncrypt[i]);
+    i++;
+    Arr3.push(toEncrypt[i]);
+    i++;
+  }
+
+  var encryptedArr = [].concat(Arr1, Arr2, Arr3);
+  return encryptedArr.join("");
 };
 
 exports.encryptString = encryptString;
