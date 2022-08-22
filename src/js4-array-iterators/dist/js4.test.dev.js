@@ -232,7 +232,7 @@ describe("Testing formatString()", function () {
     expect(formatString("")).toEqual([]);
   });
 });
-xdescribe("Testing fizzBuzz()", function () {
+describe("Testing fizzBuzz()", function () {
   var cleanArray = Array(50).fill(0).map(function (_, index) {
     return index + 1;
   });

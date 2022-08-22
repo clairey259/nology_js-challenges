@@ -270,7 +270,36 @@ var formatString = function formatString(string) {
 exports.formatString = formatString;
 
 var fizzBuzz = function fizzBuzz(mixedArray) {
-  return;
+  var toNumber = function toNumber(input) {
+    return parseFloat(input);
+  };
+
+  var isAPositiveNumber = function isAPositiveNumber(input) {
+    if (input !== NaN && input > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  var filteredMixedArray = mixedArray.map(toNumber).filter(isAPositiveNumber); //console.log(filteredMixedArray);
+
+  var fizzBuzzArr = [];
+
+  for (var i = 0; i < filteredMixedArray.length; i++) {
+    if (filteredMixedArray[i] % 3 === 0 && filteredMixedArray[i] % 5 === 0) {
+      fizzBuzzArr.push("FizzBuzz");
+    } else if (filteredMixedArray[i] % 3 === 0) {
+      fizzBuzzArr.push("Fizz");
+    } else if (filteredMixedArray[i] % 5 === 0) {
+      fizzBuzzArr.push("Buzz");
+    } else {
+      fizzBuzzArr.push(filteredMixedArray[i].toString());
+    }
+  } //console.log(fizzBuzzArr)
+
+
+  return fizzBuzzArr;
 };
 
 exports.fizzBuzz = fizzBuzz;
