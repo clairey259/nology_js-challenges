@@ -1,3 +1,18 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.encryptString = exports.totalNestedScoresArr = exports.checkStringPalindrome = exports.checkPrimaryColours = exports.checkItemInstock = exports.sortNumbersHighToLow = exports.sortCharactersAlphabetically = exports.reverseString = exports.totalScoresArr = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 /* JS5 builds on the previous challenges and adds the use of MORE Array iterators, Arrays, For Loops, Conditionals (If, else, switch)
  *  & calling your own functions.
  */
@@ -8,7 +23,6 @@
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
   share it with the group!
 */
-
 // reduce join sort indexof reverse
 
 /**
@@ -22,21 +36,16 @@
  * @param {number[]} numberArr [7, 7, 6, 2, 3, 2, 3]
  * @return {number} 30
  */
-
 // export const totalScoresArr = numberArr.reduce((total, current) => {
 //   total + current, 0);
 // return totalScoresArr
 // }
-
-export const totalScoresArr = (scoresArr) => {
-  const totalScore = scoresArr.reduce(
-    (total, current) => (total += current),
-    0
-  );
-
+var totalScoresArr = function totalScoresArr(scoresArr) {
+  var totalScore = scoresArr.reduce(function (total, current) {
+    return total += current;
+  }, 0);
   return totalScore;
 };
-
 /**
  * A function that turns a string into an array and uses a ARRAY ITERATOR to reverse it.
  * It will need to keep spaces between words.
@@ -46,13 +55,16 @@ export const totalScoresArr = (scoresArr) => {
  * @return {string} "esrever"
  */
 
-export const reverseString = (toReverse) => {
-  const Arr = [...toReverse];
-  const revArr = Arr.reverse();
-  const revString = revArr.join("");
+
+exports.totalScoresArr = totalScoresArr;
+
+var reverseString = function reverseString(toReverse) {
+  var Arr = _toConsumableArray(toReverse);
+
+  var revArr = Arr.reverse();
+  var revString = revArr.join("");
   return revString;
 };
-
 /**
  * A function that arranges an array of characters alphabetically.
  * Each character will need to be lowercase.
@@ -62,15 +74,18 @@ export const reverseString = (toReverse) => {
  * @return {string[]} ["b", "b", "b", "g", "l", "n", "x", "x"]
  */
 
-export const sortCharactersAlphabetically = (charcterArr) => {
-  const toLowerCase = (letter) => {
+
+exports.reverseString = reverseString;
+
+var sortCharactersAlphabetically = function sortCharactersAlphabetically(charcterArr) {
+  var toLowerCase = function toLowerCase(letter) {
     return letter.toLowerCase();
   };
-  const newArr = charcterArr.map(toLowerCase);
+
+  var newArr = charcterArr.map(toLowerCase);
   newArr.sort();
   return newArr;
 };
-
 /**
  * Intemediate Challenges
  */
@@ -82,15 +97,15 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  * @return {number[]} [9190, 55, 9, 6, 2, 0.5]
  */
 
-export const sortNumbersHighToLow = (numberArr) => {
-  let newArry = numberArr
-    .sort(function (a, b) {
-      return a - b;
-    })
-    .reverse();
+
+exports.sortCharactersAlphabetically = sortCharactersAlphabetically;
+
+var sortNumbersHighToLow = function sortNumbersHighToLow(numberArr) {
+  var newArry = numberArr.sort(function (a, b) {
+    return a - b;
+  }).reverse();
   return newArry;
 };
-
 /**
  * A function that checks if a given item is 'instock'.
  * You have been given a 'stocklist' in the function body.
@@ -105,28 +120,21 @@ export const sortNumbersHighToLow = (numberArr) => {
  * @return {string} "orange is instock, it is on aisle 2."
  */
 
-export const checkItemInstock = (toCheck) => {
-  const stockList = [
-    "apple",
-    "banana",
-    "orange",
-    "coconut",
-    "strawberry",
-    "lime",
-    "grapefruit",
-    "lemon",
-    "kumquat",
-    "blueberry",
-    "melon",
-  ];
-  const index = stockList.findIndex((index) => index === toCheck);
+
+exports.sortNumbersHighToLow = sortNumbersHighToLow;
+
+var checkItemInstock = function checkItemInstock(toCheck) {
+  var stockList = ["apple", "banana", "orange", "coconut", "strawberry", "lime", "grapefruit", "lemon", "kumquat", "blueberry", "melon"];
+  var index = stockList.findIndex(function (index) {
+    return index === toCheck;
+  });
+
   if (index >= 0) {
-    return `${toCheck} is instock, it is on aisle ${index}.`;
+    return "".concat(toCheck, " is instock, it is on aisle ").concat(index, ".");
   } else {
-    return `Sorry ${toCheck} is not instock.`;
+    return "Sorry ".concat(toCheck, " is not instock.");
   }
 };
-
 /**
  * A function that takes an array of colours and checks if EVERY colour is a primary colour.
  * The primary colours are ["red", "blue", "yellow"].
@@ -137,14 +145,16 @@ export const checkItemInstock = (toCheck) => {
  * @return {boolean} false
  */
 
-export const checkPrimaryColours = (coloursArr) => {
+
+exports.checkItemInstock = checkItemInstock;
+
+var checkPrimaryColours = function checkPrimaryColours(coloursArr) {
   function itIsPrimary(colour) {
     return colour === "red" || colour === "blue" || colour === "yellow";
   }
 
   return coloursArr.every(itIsPrimary);
 };
-
 /**
  * Advanced Challenges
  */
@@ -158,19 +168,22 @@ export const checkPrimaryColours = (coloursArr) => {
  * @return {boolean} true
  */
 
-export const checkStringPalindrome = (stringOne) => {
-  let stringOneMod = stringOne.replaceAll(" ", "");
+
+exports.checkPrimaryColours = checkPrimaryColours;
+
+var checkStringPalindrome = function checkStringPalindrome(stringOne) {
+  var stringOneMod = stringOne.replaceAll(" ", "");
   stringOneMod = stringOneMod.toLowerCase();
+
   function isAPallindrome(word) {
-    const wordArr = word.split("");
-    const wordArrRev = wordArr.reverse();
-    const wordRev = wordArrRev.join("");
+    var wordArr = word.split("");
+    var wordArrRev = wordArr.reverse();
+    var wordRev = wordArrRev.join("");
     return wordRev === word;
   }
 
   return isAPallindrome(stringOneMod);
 };
-
 /**
  * A function that totals a nested array of scores arrays.
  * It only needs to total each nested array.
@@ -181,10 +194,12 @@ export const checkStringPalindrome = (stringOne) => {
  * @return {number[]} [20, 7, 3]
  */
 
-export const totalNestedScoresArr = (scoresArr) => {
+
+exports.checkStringPalindrome = checkStringPalindrome;
+
+var totalNestedScoresArr = function totalNestedScoresArr(scoresArr) {
   return;
 };
-
 /**
  * Expert Challenge
  */
@@ -214,6 +229,11 @@ export const totalNestedScoresArr = (scoresArr) => {
  * @return {string} "ertnyecpd"
  */
 
-export const encryptString = (toEncrypt) => {
+
+exports.totalNestedScoresArr = totalNestedScoresArr;
+
+var encryptString = function encryptString(toEncrypt) {
   return;
 };
+
+exports.encryptString = encryptString;

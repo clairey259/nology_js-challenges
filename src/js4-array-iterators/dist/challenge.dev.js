@@ -5,6 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.fizzBuzz = exports.formatString = exports.formatStringArray = exports.filterBooksBySearch = exports.createOddEvenArray = exports.convertStringToNumbersArray = exports.createListOfPoessessions = exports.createPercentageList = exports.removeFalseValues = void 0;
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 /* JS4 builds on the previous challenges and adds the use of Array iterators, Arrays, For Loops, Conditionals (If, else, switch)
  *  & calling your own functions.
  */
@@ -78,7 +86,13 @@ var createPercentageList = function createPercentageList(numbersArr) {
 exports.createPercentageList = createPercentageList;
 
 var createListOfPoessessions = function createListOfPoessessions(possessionsArr, name) {
-  return;
+  var newArr = _toConsumableArray(possessionsArr);
+
+  for (var i = 0; i < possessionsArr.length; i++) {
+    newArr[i] = "".concat(name, " ").concat(possessionsArr[i]);
+  }
+
+  return newArr;
 };
 /**
  * Intemediate Challenges
@@ -105,7 +119,13 @@ var createListOfPoessessions = function createListOfPoessessions(possessionsArr,
 exports.createListOfPoessessions = createListOfPoessessions;
 
 var convertStringToNumbersArray = function convertStringToNumbersArray(numberString) {
-  return;
+  var words = numberString.split("+");
+
+  for (var i = 0; i < words.length; i++) {
+    words[i] = parseFloat(words[i]);
+  }
+
+  return words;
 };
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
@@ -119,7 +139,18 @@ var convertStringToNumbersArray = function convertStringToNumbersArray(numberStr
 exports.convertStringToNumbersArray = convertStringToNumbersArray;
 
 var createOddEvenArray = function createOddEvenArray(numberString) {
-  return;
+  var numberArr = numberString.split("+");
+  var newArr = [];
+
+  for (var i = 0; i < numberArr.length; i++) {
+    if (numberArr[i] % 2 == 0) {
+      newArr.push("even");
+    } else {
+      newArr.push("odd");
+    }
+  }
+
+  return newArr;
 };
 /**
  * A function that takes an array of book titles and a search term.
@@ -134,7 +165,15 @@ var createOddEvenArray = function createOddEvenArray(numberString) {
 exports.createOddEvenArray = createOddEvenArray;
 
 var filterBooksBySearch = function filterBooksBySearch(booksArr, searchTerm) {
-  return;
+  var newArr = [];
+
+  for (var i = 0; i < booksArr.length; i++) {
+    if (booksArr[i].includes(searchTerm)) {
+      newArr.push(booksArr[i]);
+    }
+  }
+
+  return newArr;
 };
 /**
  * Advanced Challenges
@@ -156,7 +195,7 @@ var filterBooksBySearch = function filterBooksBySearch(booksArr, searchTerm) {
 exports.filterBooksBySearch = filterBooksBySearch;
 
 var formatStringArray = function formatStringArray(stringArr) {
-  var cleanedArr = stringArr.forEach(function (string) {
+  var cleanedArr = stringArr.map(function (string) {
     var cleanStr = string.trim().toLowerCase();
     return cleanStr;
   }); // console.log(???)
@@ -181,7 +220,28 @@ var formatStringArray = function formatStringArray(stringArr) {
 exports.formatStringArray = formatStringArray;
 
 var formatString = function formatString(string) {
-  return;
+  var newArr = [];
+  var stringArr = string.split(""); //console.log(stringArr);
+
+  for (var i = 0; i < string.length; i++) {
+    var code = string.charCodeAt(i);
+
+    if (code > 64 && code < 91 || code > 96 && code < 123) {
+      newArr.push(String.fromCharCode(code));
+    }
+  } //console.log(newArr);
+
+
+  for (var j = 0; j < newArr.length; j++) {
+    if (j % 2 == 0) {
+      newArr[j] = newArr[j].toUpperCase();
+    } else {
+      newArr[j] = newArr[j].toLowerCase();
+    }
+  } //console.log(newArr);
+
+
+  return newArr;
 };
 /**
  * Expert Challenge

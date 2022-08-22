@@ -70,7 +70,7 @@ describe("Testing createPercentageList()", function () {
     expect(createPercentageList(Array(20).fill(1)).length).toBe(20);
   });
 });
-xdescribe("Testing createListOfPoessessions()", function () {
+describe("Testing createListOfPoessessions()", function () {
   it("Should return an array", function () {
     expect(Array.isArray(createListOfPoessessions(possessions, "Matt's"))).toBe(true);
   });
@@ -89,7 +89,7 @@ xdescribe("Testing createListOfPoessessions()", function () {
     expect(createListOfPoessessions(Array(20).fill("A"), "disco").length).toBe(20);
   });
 });
-xdescribe("Testing convertStringToNumbersArray()", function () {
+describe("Testing convertStringToNumbersArray()", function () {
   it("Should return an array", function () {
     expect(Array.isArray(convertStringToNumbersArray(numbersCSV))).toBe(true);
   });
@@ -112,7 +112,7 @@ xdescribe("Testing convertStringToNumbersArray()", function () {
     expect(convertStringToNumbersArray("100")).toEqual([100]);
   });
 });
-xdescribe("Testing createOddEvenArray()", function () {
+describe("Testing createOddEvenArray()", function () {
   it("Should return an array", function () {
     expect(Array.isArray(createOddEvenArray(numbersCSV))).toBe(true);
   });
@@ -135,7 +135,7 @@ xdescribe("Testing createOddEvenArray()", function () {
     expect(createOddEvenArray("100")).toEqual(["even"]);
   });
 });
-xdescribe("Testing filterBooksBySearch()", function () {
+describe("Testing filterBooksBySearch()", function () {
   it("Should return an array", function () {
     expect(Array.isArray(filterBooksBySearch(["one thing"], "one thing"))).toBe(true);
   });
@@ -167,7 +167,7 @@ xdescribe("Testing filterBooksBySearch()", function () {
     expect(filterBooksBySearch([])).toEqual([]);
   });
 });
-xdescribe("Testing formatStringArray()", function () {
+describe("Testing formatStringArray()", function () {
   it("Should return a String", function () {
     expect(_typeof(formatStringArray(["  front"]))).toBe("string");
   });
@@ -191,7 +191,7 @@ xdescribe("Testing formatStringArray()", function () {
     expect(formatStringArray(cleanedStrings.split("+"))).toBe(cleanedStrings);
   });
 });
-xdescribe("Testing formatString()", function () {
+describe("Testing formatString()", function () {
   it("Should NOT return undefined", function () {
     expect(formatString("  defined")).toBeDefined();
   });

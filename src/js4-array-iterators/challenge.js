@@ -47,8 +47,8 @@ export const createPercentageList = (numbersArr) => {
   const newArr = [];
   let i = 0;
   while (numbersArr.length !== newArr.length) {
-    const percentage = numbersArr[i] * 100
-    const newInput = `${percentage}%`
+    const percentage = numbersArr[i] * 100;
+    const newInput = `${percentage}%`;
     newArr.push(newInput);
     i += 1;
   }
@@ -65,7 +65,12 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const newArr = [...possessionsArr];
+  for (let i = 0; i < possessionsArr.length; i++) {
+    newArr[i] = `${name} ${possessionsArr[i]}`;
+  }
+
+  return newArr;
 };
 
 /**
@@ -90,7 +95,11 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const words = numberString.split("+");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = parseFloat(words[i]);
+  }
+  return words;
 };
 
 /**
@@ -102,7 +111,16 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const numberArr = numberString.split("+");
+  let newArr = [];
+  for (let i = 0; i < numberArr.length; i++) {
+    if (numberArr[i] % 2 == 0) {
+      newArr.push("even");
+    } else {
+      newArr.push("odd");
+    }
+  }
+  return newArr;
 };
 
 /**
@@ -115,7 +133,13 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const newArr = [];
+  for (let i = 0; i < booksArr.length; i++) {
+    if (booksArr[i].includes(searchTerm)) {
+      newArr.push(booksArr[i]);
+    }
+  }
+  return newArr;
 };
 
 /**
@@ -135,7 +159,7 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
@@ -161,7 +185,26 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+  const newArr = [];
+  const stringArr = string.split("");
+  //console.log(stringArr);
+
+  for (let i = 0; i < string.length; i++) {
+    const code = string.charCodeAt(i);
+    if ((code > 64 && code < 91) || (code > 96 && code < 123)) {
+      newArr.push(String.fromCharCode(code));
+    }
+  }
+  //console.log(newArr);
+  for (let j = 0; j < newArr.length; j++) {
+    if (j % 2 == 0) {
+      newArr[j] = newArr[j].toUpperCase();
+    } else {
+      newArr[j] = newArr[j].toLowerCase();
+    }
+  }
+  //console.log(newArr);
+  return newArr;
 };
 
 /**
