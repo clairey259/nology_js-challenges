@@ -5,6 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.cleanCocktailResponseData = exports.setImportantKeys = exports.getImportantKeys = exports.totalShoppingBasket = exports.settotalPrice = exports.findMostExpensiveItem = exports.getNumberOfKeys = exports.getTheManagers = exports.getEmployeeQuotes = void 0;
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /* This challenge build upon previous knowledge and introduces the concept of complex data types (arrays of objects) */
 
 /* 
@@ -79,7 +85,11 @@ var getNumberOfKeys = function getNumberOfKeys(object) {
 
 exports.getNumberOfKeys = getNumberOfKeys;
 
-var findMostExpensiveItem = function findMostExpensiveItem(shoppingBasketArr) {// Write code here
+var findMostExpensiveItem = function findMostExpensiveItem(shoppingBasketArr) {
+  var sortedArray = shoppingBasketArr.sort(function (a, b) {
+    return b.price - a.price;
+  });
+  return sortedArray[0];
 };
 /**
  * A function which add a new key of totalPrice to each shopping basket item in the array where total cost is
@@ -100,7 +110,15 @@ var findMostExpensiveItem = function findMostExpensiveItem(shoppingBasketArr) {/
 
 exports.findMostExpensiveItem = findMostExpensiveItem;
 
-var settotalPrice = function settotalPrice(shoppingBasketArr) {// Write code here
+var settotalPrice = function settotalPrice(shoppingBasketArr) {
+  var shoppingBasketArrWithTotalPrice = shoppingBasketArr.map(function (item) {
+    var newItem = _objectSpread({}, item);
+
+    var totalPrice = newItem.price * newItem.quantity;
+    newItem.totalPrice = totalPrice;
+    return newItem;
+  });
+  return shoppingBasketArrWithTotalPrice;
 };
 /**
  * A function which sums the total cost of every item in the array and returns it as a single number.
@@ -112,7 +130,15 @@ var settotalPrice = function settotalPrice(shoppingBasketArr) {// Write code her
 
 exports.settotalPrice = settotalPrice;
 
-var totalShoppingBasket = function totalShoppingBasket(shoppingBasketArr) {// Write code here
+var totalShoppingBasket = function totalShoppingBasket(shoppingBasketArr) {
+  var totalPriceArr = [];
+  shoppingBasketArr.forEach(function (element) {
+    totalPriceArr.push(element.totalPrice);
+  });
+  var totalCost = totalPriceArr.reduce(function (accumulator, element) {
+    return accumulator + element;
+  }, 0);
+  return totalCost;
 };
 /* Advanced Challenges */
 
@@ -127,7 +153,15 @@ var totalShoppingBasket = function totalShoppingBasket(shoppingBasketArr) {// Wr
 
 exports.totalShoppingBasket = totalShoppingBasket;
 
-var getImportantKeys = function getImportantKeys(mealsArr) {// Write code here
+var getImportantKeys = function getImportantKeys(mealsArr) {
+  var cleanedArr = mealsArr.map(function (element) {
+    var newElement = _objectSpread({}, element);
+
+    delete newElement.timeStamp;
+    delete newElement.userCreated;
+    return newElement;
+  });
+  return cleanedArr;
 };
 /**
  * A function which takes an array of meal objects and check if every object contains the necessary keys. If a key is

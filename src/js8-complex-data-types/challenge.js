@@ -32,7 +32,7 @@ export const getEmployeeQuotes = (employeeArr) => {
 export const getTheManagers = (employeeArr) => {
   const managersArr = employeeArr.filter((employee) => {
     employee.isManagement === true;
-    return employee.isManagement
+    return employee.isManagement;
   });
   return managersArr;
 };
@@ -46,14 +46,13 @@ export const getTheManagers = (employeeArr) => {
 export const getNumberOfKeys = (object) => {
   let count = 0;
 
-// loop through each key/value
-for(let key in object) {
-
+  // loop through each key/value
+  for (let key in object) {
     // increase the count
     ++count;
-}
+  }
 
-return count;
+  return count;
 };
 
 /* Intermediate Challenges */
@@ -66,7 +65,9 @@ return count;
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number}} The most expensive item in the shopping basket
  */
 export const findMostExpensiveItem = (shoppingBasketArr) => {
-  // Write code here
+  const sortedArray = shoppingBasketArr.sort((a, b) => b.price - a.price);
+
+  return sortedArray[0];
 };
 
 /**
@@ -85,7 +86,13 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} A new array where each object has had a total price added to it
  */
 export const settotalPrice = (shoppingBasketArr) => {
-  // Write code here
+  const shoppingBasketArrWithTotalPrice = shoppingBasketArr.map((item) => {
+    const newItem = { ...item };
+    const totalPrice = newItem.price * newItem.quantity;
+    newItem.totalPrice = totalPrice;
+    return newItem;
+  });
+  return shoppingBasketArrWithTotalPrice;
 };
 
 /**
@@ -95,7 +102,14 @@ export const settotalPrice = (shoppingBasketArr) => {
  * @returns {number} The total cost of the order
  */
 export const totalShoppingBasket = (shoppingBasketArr) => {
-  // Write code here
+  let totalPriceArr = [];
+  shoppingBasketArr.forEach((element) => {
+    totalPriceArr.push(element.totalPrice);
+  });
+  const totalCost = totalPriceArr.reduce((accumulator, element) => {
+    return accumulator + element;
+  }, 0);
+  return totalCost;
 };
 
 /* Advanced Challenges */
@@ -108,7 +122,13 @@ export const totalShoppingBasket = (shoppingBasketArr) => {
  * @returns {{id: number, name: string, ingredients: string[], country: string}[]} An array of cleaned meal objects
  */
 export const getImportantKeys = (mealsArr) => {
-  // Write code here
+  const cleanedArr = mealsArr.map((element) => {
+    let newElement = {...element}
+    delete newElement.timeStamp;
+    delete newElement.userCreated;
+    return newElement;
+  });
+  return cleanedArr;
 };
 
 /**

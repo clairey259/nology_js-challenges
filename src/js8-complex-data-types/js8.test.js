@@ -167,7 +167,7 @@ describe("Intermediate level challenges", () => {
     }
   ];
 
-  xdescribe("findMostExpensiveItem() tests", () => {
+  describe("findMostExpensiveItem() tests", () => {
     it("Should return a single object", () => {
       expect(findMostExpensiveItem(shoppingBasket)).toHaveProperty("name");
       expect(findMostExpensiveItem(shoppingBasket).name).toBe("hoodie");
@@ -183,7 +183,7 @@ describe("Intermediate level challenges", () => {
     });
   });
 
-  xdescribe("settotalPrice() tests", () => {
+  describe("settotalPrice() tests", () => {
     it("Should return an array", () => {
       expect(Array.isArray(settotalPrice(shoppingBasket))).toBe(true);
     });
@@ -205,7 +205,7 @@ describe("Intermediate level challenges", () => {
     });
   });
 
-  xdescribe("totalShoppingBasket() tests", () => {
+  describe("totalShoppingBasket() tests", () => {
     it("Should return a number", () => {
       expect(typeof totalShoppingBasket(shoppingBasketWithTotals)).toBe("number");
     });
@@ -216,7 +216,7 @@ describe("Intermediate level challenges", () => {
   });
 });
 
-xdescribe("getImportantKeys() tests", () => {
+describe("getImportantKeys() tests", () => {
   const mealsArr = [
     {
       id: 10,
@@ -281,7 +281,7 @@ xdescribe("getImportantKeys() tests", () => {
   });
 });
 
-xdescribe("setImportantKeys() tests", () => {
+describe("setImportantKeys() tests", () => {
   const mealsArr = [
     {
       id: 10,

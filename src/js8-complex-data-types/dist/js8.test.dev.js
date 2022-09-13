@@ -151,7 +151,7 @@ describe("Intermediate level challenges", function () {
     quantity: 1,
     totalPrice: 5
   }];
-  xdescribe("findMostExpensiveItem() tests", function () {
+  describe("findMostExpensiveItem() tests", function () {
     it("Should return a single object", function () {
       expect(findMostExpensiveItem(shoppingBasket)).toHaveProperty("name");
       expect(findMostExpensiveItem(shoppingBasket).name).toBe("hoodie");
@@ -165,7 +165,7 @@ describe("Intermediate level challenges", function () {
       });
     });
   });
-  xdescribe("settotalPrice() tests", function () {
+  describe("settotalPrice() tests", function () {
     it("Should return an array", function () {
       expect(Array.isArray(settotalPrice(shoppingBasket))).toBe(true);
     });
@@ -185,7 +185,7 @@ describe("Intermediate level challenges", function () {
       }));
     });
   });
-  xdescribe("totalShoppingBasket() tests", function () {
+  describe("totalShoppingBasket() tests", function () {
     it("Should return a number", function () {
       expect(_typeof(totalShoppingBasket(shoppingBasketWithTotals))).toBe("number");
     });
@@ -194,7 +194,7 @@ describe("Intermediate level challenges", function () {
     });
   });
 });
-xdescribe("getImportantKeys() tests", function () {
+describe("getImportantKeys() tests", function () {
   var mealsArr = [{
     id: 10,
     name: "Tikka Masala",
@@ -247,7 +247,7 @@ xdescribe("getImportantKeys() tests", function () {
     }]);
   });
 });
-xdescribe("setImportantKeys() tests", function () {
+describe("setImportantKeys() tests", function () {
   var mealsArr = [{
     id: 10,
     name: "Tikka Masala",
