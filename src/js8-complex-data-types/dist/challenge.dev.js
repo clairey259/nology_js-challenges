@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.cleanCocktailResponseData = exports.setImportantKeys = exports.getImportantKeys = exports.totalShoppingBasket = exports.settotalPrice = exports.findMostExpensiveItem = exports.getNumberOfKeys = exports.getTheManagers = exports.getEmployeeQuotes = void 0;
+
 /* This challenge build upon previous knowledge and introduces the concept of complex data types (arrays of objects) */
 
 /* 
@@ -16,46 +23,49 @@
  * @param {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} employeeArr - An array of employee objects
  * @returns {string[]} A list of the employees quotes for the website
  */
-export const getEmployeeQuotes = (employeeArr) => {
-  const employeeQuotes = employeeArr.map((employee) => {
+var getEmployeeQuotes = function getEmployeeQuotes(employeeArr) {
+  var employeeQuotes = employeeArr.map(function (employee) {
     return employee.quote;
   });
   return employeeQuotes;
 };
-
 /**
  * A function which takes an array of employee objects and returns a new array only containing employees that are managers.
  *
  * @param {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} employeeArr - An array of employee objects
  * @returns {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} An array containing only managers
  */
-export const getTheManagers = (employeeArr) => {
-  const managersArr = employeeArr.filter((employee) => {
+
+
+exports.getEmployeeQuotes = getEmployeeQuotes;
+
+var getTheManagers = function getTheManagers(employeeArr) {
+  var managersArr = employeeArr.filter(function (employee) {
     employee.isManagement === true;
-    return employee.isManagement
+    return employee.isManagement;
   });
   return managersArr;
 };
-
 /**
  * A function which tells you the number of keys on the provided object.
  *
  * @param {object} object - The provided object with an assortment of keys
  * @returns {number} The number of the keys on the object
  */
-export const getNumberOfKeys = (object) => {
-  let count = 0;
 
-// loop through each key/value
-for(let key in object) {
 
+exports.getTheManagers = getTheManagers;
+
+var getNumberOfKeys = function getNumberOfKeys(object) {
+  var count = 0; // loop through each key/value
+
+  for (var key in object) {
     // increase the count
     ++count;
-}
+  }
 
-return count;
+  return count;
 };
-
 /* Intermediate Challenges */
 
 /**
@@ -65,10 +75,12 @@ return count;
  * @param {{name: string, price: number, hasFreeShipping: boolean, quantity: number}[]} shoppingBasketArr - An array of basket items for an online shop
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number}} The most expensive item in the shopping basket
  */
-export const findMostExpensiveItem = (shoppingBasketArr) => {
-  // Write code here
-};
 
+
+exports.getNumberOfKeys = getNumberOfKeys;
+
+var findMostExpensiveItem = function findMostExpensiveItem(shoppingBasketArr) {// Write code here
+};
 /**
  * A function which add a new key of totalPrice to each shopping basket item in the array where total cost is
  * the price * the quantity of items ordered i.e.
@@ -84,20 +96,24 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  * @param {{name: string, price: number, hasFreeShipping: boolean, quantity: number}[]} shoppingBasketArr - An array of basket items for an online shop
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} A new array where each object has had a total price added to it
  */
-export const settotalPrice = (shoppingBasketArr) => {
-  // Write code here
-};
 
+
+exports.findMostExpensiveItem = findMostExpensiveItem;
+
+var settotalPrice = function settotalPrice(shoppingBasketArr) {// Write code here
+};
 /**
  * A function which sums the total cost of every item in the array and returns it as a single number.
  *
  * @param {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} shoppingBasketArr - An array of basket items for an online shop
  * @returns {number} The total cost of the order
  */
-export const totalShoppingBasket = (shoppingBasketArr) => {
-  // Write code here
-};
 
+
+exports.settotalPrice = settotalPrice;
+
+var totalShoppingBasket = function totalShoppingBasket(shoppingBasketArr) {// Write code here
+};
 /* Advanced Challenges */
 
 /**
@@ -107,10 +123,12 @@ export const totalShoppingBasket = (shoppingBasketArr) => {
  * @param {{id: number, name: string, ingredients: string[], country: string, timeStamp: number, userCreated: string}[]} mealsArr - An array containing meal objects
  * @returns {{id: number, name: string, ingredients: string[], country: string}[]} An array of cleaned meal objects
  */
-export const getImportantKeys = (mealsArr) => {
-  // Write code here
-};
 
+
+exports.totalShoppingBasket = totalShoppingBasket;
+
+var getImportantKeys = function getImportantKeys(mealsArr) {// Write code here
+};
 /**
  * A function which takes an array of meal objects and check if every object contains the necessary keys. If a key is
  * missing it adds a default value instead.
@@ -121,10 +139,12 @@ export const getImportantKeys = (mealsArr) => {
  * @param {{id: number, name: string, ingredients: string[], country: string, isVegetarian?: boolean, timeToCook?: number}[]} mealsArr - An array containing meal objects
  * @returns {{id: number, name: string, ingredients: string[], country: string, isVegetarian: boolean, timeToCook: number}[]}
  */
-export const setImportantKeys = (mealsArr) => {
-  // Write code here
-};
 
+
+exports.getImportantKeys = getImportantKeys;
+
+var setImportantKeys = function setImportantKeys(mealsArr) {// Write code here
+};
 /* Expert Challenge */
 
 /**
@@ -153,6 +173,11 @@ export const setImportantKeys = (mealsArr) => {
  *  ingredients: string[],
  * }[]} A Cleaned array of cocktail data
  */
-export const cleanCocktailResponseData = (cocktailData) => {
-  // Write code here
+
+
+exports.setImportantKeys = setImportantKeys;
+
+var cleanCocktailResponseData = function cleanCocktailResponseData(cocktailData) {// Write code here
 };
+
+exports.cleanCocktailResponseData = cleanCocktailResponseData;
